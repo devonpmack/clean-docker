@@ -20,7 +20,9 @@
 #Save current time/date
 TODAY=$(date +"%y-%m-%d_%T")
 #Output directory
-FILE="/mnt/nas/bio_requests/8393/cleanDocker/$TODAY"
+#FILE="/mnt/nas/bio_requests/8393/cleanDocker/$TODAY"
+FILE=$TODAY
+echo $FILE
 echo "Running script..." >> $FILE
 #Clean containers
 stoppedContainers="$(docker ps -aqf status=exited)"
