@@ -21,6 +21,6 @@ Add this line to the bottom of the file (must have return character after):
 3. Day of month (1 - 31) 
 4. Month (1 - 12)
 5. Day of week (0 - 7) (where both 0 and 7 mean Sun, 1 = Mon, 2 = Tue, etc)
-6. Command line to be executed (eg. python3 /home/update-16Sdata/updateDatabase.py) 
+6. Command line to be executed (eg. /home/update-16Sdata/updateDatabase.sh) 
 
 This setup will make it run every Monday at 7:00 AM.
