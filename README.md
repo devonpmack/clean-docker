@@ -10,16 +10,17 @@ In addition it will delete all stopped containers and data only containers
 - The user must have permissions to run docker commands without sudo
       
 ## Installation:                                                                                                
-Edit the cron config file:                                                               
+
+Edit the cron config file through your terminal:                                                               
 `$ crontab -e`                                                                  
 Add this line to the bottom of the file (must have return character after):                                                 
-`0 15 * * 5 <PATH TO "cleanDocker.sh">`
+`0 7 * * 1 python3 <PATH TO "cleanDocker.sh">`
 ##### Parameters (* = any):
-1. Day of week (0 - 7) (Sunday=0 or 7)                            
-2. Month (1 - 12)                                                 
-3. Day of month (1 - 31)                                           
-4. Hour (0 - 23)                                                   
-5. Minute (0 - 59)
-6. File to be executed (eg. /home/devon/Documents/cleanDocker.sh) 
+1. Minute (0 - 59)
+2. Hour (0 - 23)
+3. Day of month (1 - 31) 
+4. Month (1 - 12)
+5. Day of week (0 - 7) (where both 0 and 7 mean Sun, 1 = Mon, 2 = Tue, etc)
+6. Command line to be executed (eg. python3 /home/update-16Sdata/updateDatabase.py) 
 
-This setup will make it run every Friday at 3:00 PM.
+This setup will make it run every Monday at 7:00 AM.
