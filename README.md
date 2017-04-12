@@ -54,5 +54,4 @@ Parameter Number | Parameter (`*` means it doesn't matter when)
 4 | Month (1 - 12)
 5 | Day of week (0 - 7) (where both 0 and 7 mean Sun, 1 = Mon, 2 = Tue, etc)
 6 | Command line to be executed (eg. /home/update-16Sdata/updateDatabase.py) 
-) 
 
