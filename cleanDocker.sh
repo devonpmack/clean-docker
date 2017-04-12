@@ -26,7 +26,10 @@ if [ ! -f config.dat ]; then
     echo "Please enter the folder you would like the logs to be stored in the config.dat file that was just created"
     exit
 fi
-FILE=`cat config.dat`"log"$TODAY
+FOLDER=`cat config.dat`
+mkdir -p ${FOLDER}
+FILE="${FOLDER}log${TODAY}"
+
 echo Storing logs at $FILE
 echo "Running script..." >> $FILE
 #Clean containers
