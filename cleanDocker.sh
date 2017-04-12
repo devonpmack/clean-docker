@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 ####################################################################################
 # Written by Devon Mack 2017-02-24                                                 #
 #                                                                                  #
@@ -18,11 +19,15 @@
 #    ------------- Minute (0 - 59)                                                 #
 ####################################################################################
 #Save current time/date
-TODAY=$(date +"%y-%m-%d_%T")
+TODAY=$(date +"%y-%m-%d")
 #Output directory
-#FILE="/mnt/nas/bio_requests/8393/cleanDocker/$TODAY"
-FILE=$TODAY
-echo $FILE
+if [ ! -f config.dat ]; then
+    echo $HOME"/CleanDockerLogs/" >> config.dat
+    echo "Please enter the folder you would like the logs to be stored in the config.dat file that was just created"
+    exit
+fi
+FILE=`cat config.dat`"log"$TODAY
+echo Storing logs at $FILE
 echo "Running script..." >> $FILE
 #Clean containers
 stoppedContainers="$(docker ps -aqf status=exited)"
@@ -56,4 +61,4 @@ fi
 #This line will ensure everything is deleted
 docker system prune --force
 #finished
-echo "Completed running at $TODAY" >> $FILE
+echo "Completed running on $TODAY" >> $FILE
