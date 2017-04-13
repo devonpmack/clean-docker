@@ -17,7 +17,7 @@ git clone https://github.com/devonpmack/clean-docker.git
 ```
 Make the script executable with:
 ```console
-chmod +x updateDatabase.py`
+chmod 755 cleanDocker.sh
 ```
 Run the script:
 ```console
@@ -35,7 +35,7 @@ eg. `/home/me/CleanDockerLogs/`
 Edit the cron config file through your terminal:
 
 ```console
-crontab -e`                                                                  
+sudo crontab -e
 ```
 
 Add this line to the bottom of the file (must have return character after):                                                 
